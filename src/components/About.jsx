@@ -1,21 +1,28 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-export default function About({ onBack }) {
+export default function About() {
   return (
     <motion.div
-      className="min-h-screen bg-white text-neutral-900 antialiased"
+      className="min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <div className="max-w-2xl mx-auto px-4 md:px-8 py-20">
-        <motion.button
-          onClick={onBack}
-          className="text-sm text-neutral-500 hover:text-neutral-900 mb-8 cursor-pointer"
-          whileHover={{ x: -4 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
         >
-          ← Back to Tinta
-        </motion.button>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 mb-8 transition-colors"
+          >
+            <span>←</span>
+            <span>Back to Home</span>
+          </Link>
+        </motion.div>
 
         <motion.h1
           className="text-4xl font-light tracking-tight mb-8"
