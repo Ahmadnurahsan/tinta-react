@@ -8,6 +8,7 @@ import ContrastChecker from './components/ContrastChecker'
 import PreviewDesigns from './components/PreviewDesigns'
 import ExportPanel from './components/ExportPanel'
 import Footer from './components/Footer'
+import About from './components/About'
 import { generatePalette } from './utils/color'
 
 let nextId = 6
@@ -29,6 +30,7 @@ export default function App() {
   ])
   const [activeId, setActiveId] = useState('p1')
   const [toast, setToast] = useState(null)
+  const [showAbout, setShowAbout] = useState(false)
 
   const activePalette = palettes.find(p => p.id === activeId) || palettes[0]
 
@@ -77,6 +79,10 @@ export default function App() {
   )
 
   const currentColors = allColors.find(c => c.id === activeId)?.colors || paletteColors
+
+  if (showAbout) {
+    return <About onBack={() => setShowAbout(false)} />
+  }
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 antialiased relative bg-grid">
@@ -154,7 +160,7 @@ export default function App() {
       </div>
 
       <div className="pb-20">
-        <Footer />
+        <Footer onAboutClick={() => setShowAbout(true)} />
       </div>
 
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-t border-neutral-200">
