@@ -82,63 +82,7 @@ export default function App() {
     <div className="min-h-screen bg-white text-neutral-900 antialiased relative bg-grid">
       <HeroBand colors={currentColors} />
 
-      <header className="text-center pt-24 pb-10 relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 -z-10 opacity-[0.05]"
-          animate={{
-            background: [
-              `radial-gradient(ellipse at 20% 50%, ${currentColors?.[5] || '#6366F1'} 0%, transparent 60%)`,
-              `radial-gradient(ellipse at 80% 50%, ${currentColors?.[3] || '#A5B4FC'} 0%, transparent 60%)`,
-              `radial-gradient(ellipse at 20% 50%, ${currentColors?.[5] || '#6366F1'} 0%, transparent 60%)`,
-            ],
-          }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        />
 
-        <motion.h1
-          className="text-8xl md:text-9xl font-light tracking-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            background: currentColors ? `linear-gradient(135deg, ${currentColors[5] || '#6366F1'}, ${currentColors[8] || '#4F46E5'}, ${currentColors[4] || '#A5B4FC'})` : undefined,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          TINTA.
-        </motion.h1>
-
-        <motion.p
-          className="text-lg text-neutral-500 mt-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          Tailwind CSS palette generator · API output · WCAG contrast lab
-        </motion.p>
-
-        <motion.div
-          className="flex justify-center gap-3 mt-6 text-sm text-neutral-400 flex-wrap"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          {['✦ Color assistant', '✦ Palette generator', '✦ Contrast checker'].map((item) => (
-            <motion.span
-              key={item}
-              className="border border-neutral-300 rounded-full px-4 py-1.5 cursor-default"
-              whileHover={{
-                scale: 1.05,
-                borderColor: currentColors?.[5] || '#6366F1',
-                color: currentColors?.[5] || '#6366F1',
-              }}
-            >
-              {item}
-            </motion.span>
-          ))}
-        </motion.div>
-      </header>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 pb-12 relative">
         <div className="flex flex-col lg:flex-row gap-8">
