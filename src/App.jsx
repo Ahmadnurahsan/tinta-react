@@ -82,9 +82,7 @@ export default function App() {
     <div className="min-h-screen bg-white text-neutral-900 antialiased relative bg-grid">
       <HeroBand colors={currentColors} />
 
-
-
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pb-12 relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 relative">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-[320px] shrink-0 space-y-8">
             <section>
